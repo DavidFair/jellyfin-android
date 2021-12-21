@@ -173,7 +173,7 @@ class PlaybackMenus(
     private fun createSpeedMenu() = PopupMenu(context, speedButton).apply {
         for (step in SPEED_MENU_STEP_MIN..SPEED_MENU_STEP_MAX) {
             val newSpeed = step * SPEED_MENU_STEP_SIZE
-            menu.add(SPEED_MENU_GROUP, step, Menu.NONE, "${newSpeed}x").isChecked = newSpeed == 1f
+            menu.add(SPEED_MENU_GROUP, step, Menu.NONE, String.format("%.2fx", newSpeed)).isChecked = newSpeed == 1f
         }
         menu.setGroupCheckable(SPEED_MENU_GROUP, true, true)
         setOnMenuItemClickListener { clickedItem: MenuItem ->
